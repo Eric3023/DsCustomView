@@ -19,4 +19,16 @@
         android:padding="15dp"
         android:onClick="click"
         android:background="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/custom_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="雷达扫描动画"
+        android:layout_marginTop="25dp"
+        android:padding="15dp"
+        android:onClick="click"
+        android:background="@color/colorAccent"
+        android:layout_below="@+id/custom_first"
+        android:layout_alignStart="@+id/custom_first" />
 </RelativeLayout>

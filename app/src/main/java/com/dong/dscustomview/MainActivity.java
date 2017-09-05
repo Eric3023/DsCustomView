@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.dong.dscustomview.customradar.CusomRadarActivity;
 import com.dong.dscustomview.customsuperman.CustomSuperManActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         switch (vId){
             case R.id.custom_first:
                 mContext.startActivity(new Intent(mContext, CustomSuperManActivity.class));
+                break;
+            case R.id.custom_second:
+                mContext.startActivity(new Intent(mContext, CusomRadarActivity.class));
                 break;
         }
     }

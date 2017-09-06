@@ -111,7 +111,6 @@ public class CustomRadarView extends View implements ValueAnimator.AnimatorUpdat
         //绘制扫描到的光斑(还是没有设计师)
         color1 = "#"+getTran(degree, 15)+"ffffff";
         color2 = "#"+getTran(degree, 15)+"1fe947";
-        Log.d("TAG", "onDraw: "+color1+"-----"+color2);
         Shader shader3 = new RadialGradient(cw*7/12, ch/2+cw/36, cw/144, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
         paint.setShader(shader3);
         canvas.drawCircle(cw*7/12, ch/2+cw/36, cw/144, paint);

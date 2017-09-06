@@ -109,36 +109,27 @@ public class CustomRadarView extends View implements ValueAnimator.AnimatorUpdat
         paint.setShader(null);
 
         //绘制扫描到的光斑(还是没有设计师)
-//        if(degree<15-45)
-//            degree+=360;
-//        pencent = (degree-15+45) * 16*16/360;
-//        color1 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"ffffff";
-//        color2 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"1fe947";
-//        Log.d("TAG", "onDraw: "+color1+"-----"+color2);
-//        Shader shader3 = new RadialGradient(cw*7/12, ch/2+cw/36, cw/144, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
-//        paint.setShader(shader3);
-//        canvas.drawCircle(cw*7/12, ch/2+cw/36, cw/144, paint);
-//        paint.setShader(null);
-//
-//        if(degree<60-45)
-//            degree+=360;
-//        pencent = (degree-60+45) * 100/360;
-//        color1 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"ffffff";
-//        color2 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"1fe947";
-//        shader3 = new RadialGradient(cw*39/72, ch/2+cw/13, cw/132, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
-//        paint.setShader(shader3);
-//        canvas.drawCircle(cw*39/72, ch/2+cw/13, cw/132, paint);
-//        paint.setShader(null);
-//
-//        if(degree<75-45)
-//            degree+=360;
-//        pencent = (degree-75+45) * 100/360;
-//        color1 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"ffffff";
-//        color2 = "#"+convertOX(pencent/16)+convertOX(pencent%16)+"1fe947";
-//        shader3 = new RadialGradient(cw*19/36, ch/2+cw/9, cw/144, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
-//        paint.setShader(shader3);
-//        canvas.drawCircle(cw*19/36, ch/2+cw/9, cw/144, paint);
-//        paint.setShader(null);
+        color1 = "#"+getTran(degree, 15)+"ffffff";
+        color2 = "#"+getTran(degree, 15)+"1fe947";
+        Log.d("TAG", "onDraw: "+color1+"-----"+color2);
+        Shader shader3 = new RadialGradient(cw*7/12, ch/2+cw/36, cw/144, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
+        paint.setShader(shader3);
+        canvas.drawCircle(cw*7/12, ch/2+cw/36, cw/144, paint);
+        paint.setShader(null);
+
+        color1 = "#"+getTran(degree, 60)+"ffffff";
+        color2 = "#"+getTran(degree, 60)+"1fe947";
+        shader3 = new RadialGradient(cw*39/72, ch/2+cw/13, cw/132, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
+        paint.setShader(shader3);
+        canvas.drawCircle(cw*39/72, ch/2+cw/13, cw/132, paint);
+        paint.setShader(null);
+
+        color1 = "#"+getTran(degree, 75)+"ffffff";
+        color2 = "#"+getTran(degree, 75)+"1fe947";
+        shader3 = new RadialGradient(cw*19/36, ch/2+cw/9, cw/144, Color.parseColor(color1), Color.parseColor(color2), Shader.TileMode.CLAMP);
+        paint.setShader(shader3);
+        canvas.drawCircle(cw*19/36, ch/2+cw/9, cw/144, paint);
+        paint.setShader(null);
 
     }
 
@@ -161,25 +152,20 @@ public class CustomRadarView extends View implements ValueAnimator.AnimatorUpdat
         invalidate();
     }
 
-    private String convertOX(int i){
-        if(i < 10)
-            return i+"";
-        else{
-            switch (i){
-                case 10:
-                    return "a";
-                case 11:
-                    return "b";
-                case 12:
-                    return "c";
-                case 13:
-                    return "d";
-                case 14:
-                    return "e";
-                case 15:
-                    return "f";
-            }
+    /*
+        获取光斑透明度
+     */
+    private String getTran(int degree, int angle){
+
+        degree = (degree + 45)%360;
+        degree -= angle;
+        degree = 270 - degree;
+
+        if(degree > 0 && degree < 270 ){
+            degree = degree*16*16/270;
+            return Integer.toHexString(degree/16) +""+Integer.toHexString(degree%16);
+        }else{
+            return "00";
         }
-        return "0";
     }
 }

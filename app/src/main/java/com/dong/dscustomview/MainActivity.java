@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.dong.dscustomview.customoclock.CustomOclockActivity;
 import com.dong.dscustomview.customradar.CusomRadarActivity;
 import com.dong.dscustomview.customsuperman.CustomSuperManActivity;
 
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.custom_second:
                 mContext.startActivity(new Intent(mContext, CusomRadarActivity.class));
+                break;
+            case R.id.custom_third:
+                mContext.startActivity(new Intent(mContext, CustomOclockActivity.class));
                 break;
         }
     }

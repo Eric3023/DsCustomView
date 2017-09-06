@@ -26,6 +26,10 @@ package="com.dong.dscustomview">
         android:screenOrientation="landscape"
         android:configChanges="keyboardHidden|orientation">
     </activity>
+    <activity android:name=".customoclock.CustomOclockActivity"
+        android:screenOrientation="landscape"
+        android:configChanges="keyboardHidden|orientation">
+    </activity>
 </application>
 
 </manifest>

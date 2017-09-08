@@ -8,3 +8,7 @@
 2.雷达扫描
 
 ![image](https://github.com/Eric3023/DsCustomView/blob/master/app/src/main/screenshoot_radar.gif?raw=true)
+
+3.波浪时钟
+
+![image](https://github.com/Eric3023/DsCustomView/blob/master/app/src/main/screenshoot_oclock.gif?raw=true)

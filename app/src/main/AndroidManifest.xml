@@ -30,6 +30,10 @@ package="com.dong.dscustomview">
         android:screenOrientation="landscape"
         android:configChanges="keyboardHidden|orientation">
     </activity>
+    <activity android:name=".customsuspend.CustomSuspendActivity"
+        android:screenOrientation="landscape"
+        android:configChanges="keyboardHidden|orientation">
+    </activity>
 </application>
 
 </manifest>

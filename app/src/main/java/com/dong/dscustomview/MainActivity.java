@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import com.dong.dscustomview.customoclock.CustomOclockActivity;
 import com.dong.dscustomview.customradar.CusomRadarActivity;
 import com.dong.dscustomview.customsuperman.CustomSuperManActivity;
+import com.dong.dscustomview.customsuspend.CustomSuspendActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.custom_third:
                 mContext.startActivity(new Intent(mContext, CustomOclockActivity.class));
                 break;
+            case R.id.custom_fourth:
+                mContext.startActivity(new Intent(mContext, CustomSuspendActivity.class));
         }
     }
 

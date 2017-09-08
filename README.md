@@ -12,3 +12,7 @@
 3.波浪时钟
 
 ![image](https://github.com/Eric3023/DsCustomView/blob/master/app/src/main/screenshoot_oclock.gif?raw=true)
+
+3.感应悬浮
+
+![image](https://github.com/Eric3023/DsCustomView/blob/master/app/src/main/screenshoot_suspend.gif?raw=true)
